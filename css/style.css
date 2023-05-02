@@ -10,15 +10,20 @@ body{
 
 /* FUNZIONALITÀ */
 :root{
-    --font-size-s:0.8rem;
+    --font-size-s:0.7rem;
+    --font-size-m:0.9rem;
+    --font-size-l:1.3rem;
     --card-space: 2px;
     --center: 1400px;
     --gap-card: 10px;
+    --f-height: 70px;
+    --h-height: 50px;
     --color-card: #ec407a;
     --grey-0: #1a1a1a;
     --grey-1: #272728;
     --grey-2:  #222222;
     --grey-3: #7d7d7dc2;
+    --grey-4: #a8a8a8
 }
 
 .flex{
@@ -37,7 +42,7 @@ a{
 
 /* HEADER */
 header{
-    height: 50px;
+    height: var(--h-height);
     background-color: var(--grey-2);
     color: white;
 }
@@ -60,7 +65,7 @@ header a{
 
 /* MAIN */
 main{
-    height: calc(100vh - 130px);
+    height: calc(100vh - (var(--h-height) + var(--f-height)));
     overflow-y: auto;
     color: white;
     background-color: var(--grey-2);
@@ -93,6 +98,74 @@ main{
 
 /* FOOTER */
 footer{
-    height: 80px;
+    height: var(--f-height);
     background-color: var(--grey-0);
+    color: var(--grey-4);
+}
+
+.footer-nav.flex{
+    height: 100%;
+    align-items: center;
+}
+
+.footer-nav > div:nth-child(odd){  /* footer-nav-left footer-nav-right */
+    flex-basis: 25%;
+}
+
+.footer-nav > div:nth-child(2){  /* footer-nav-center */
+    flex-grow: 1;
+}
+
+/* footer left */
+.audio,.video{
+    margin: 0 15px;
+    text-align: center;
+    position: relative;
+}
+
+/* icone del footer */
+.icon{
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+}
+
+.fa-chevron-up{  /* fraccia in su */
+    font-size: 10px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.icon-symbol{
+    font-size: var(--font-size-l);
+}
+
+.icon-description{
+    margin-top: 5px;
+    font-size: var(--font-size-m);
+}
+
+footer a{
+    display: block;
+}
+
+.fa-arrow-up-from-bracket{  /* !simbolo condividi schermo */
+    color: #23d959;
+}
+
+.icon-description.share-screen{  /* !scritta condividi schermo */
+    color: #23d959;
+}
+
+/* footer right */
+.footer-nav-right{
+    justify-content: end;
+}
+
+.footer-nav-right a{
+    background-color: red;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 10px;
 }
