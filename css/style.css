@@ -23,7 +23,9 @@ body{
     --grey-1: #272728;
     --grey-2:  #222222;
     --grey-3: #7d7d7dc2;
-    --grey-4: #a8a8a8
+    --grey-4: #a8a8a8;
+    --grey-5: #373b3e;
+    --grey-6: #535353;
 }
 
 .flex{
@@ -38,6 +40,48 @@ a{
 .center{
     max-width: var(--center);
     margin: 0 auto;
+}
+
+/* EFFETTI */
+.header-nav a:hover{  /* sfonfo in hover su link header */
+    background-color: var(--grey-5);
+}
+
+.card:hover::before{  /* sfondo oscurato in hover sulle card */
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.card:hover a{  /* tasto disattiva audio in hover sulle card */
+    display: inline-block;
+}
+
+.audio:hover, .video:hover{ /* sfonfo in hover su icona audio e video */
+    background-color: var(--grey-5);
+    border-radius: 10px;
+}
+
+.icon:hover{  /* sfonfo in hover sulle altre icone del footer */
+    background-color: var(--grey-5);
+    border-radius: 10px;
+}
+
+.fa-chevron-up:hover{ /* sfonfo in hover sulla freccetta in su */
+    background-color: var(--grey-6);
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    right: 0px;
+    top: 5px;
+}
+
+.footer-nav-right a:hover{  /* sfonfo in hover su tasto termina */
+    background-color: #de2828;
 }
 
 /* HEADER */
@@ -81,6 +125,17 @@ main{
     flex: 0 0 calc(var(--center) / 7 - var(--gap-card));
     position: relative;
     text-align: center;
+}
+
+.card > a{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+    background-color: blue;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .immage-profile{
@@ -127,13 +182,14 @@ footer{
 .icon{
     flex-grow: 1;
     text-align: center;
+    justify-content: center;
     position: relative;
 }
 
 .fa-chevron-up{  /* fraccia in su */
     font-size: 10px;
     position: absolute;
-    right: 0;
+    right: 5px;
     top: 10px;
 }
 
