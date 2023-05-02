@@ -11,9 +11,14 @@ body{
 /* FUNZIONALITÀ */
 :root{
     --font-size-s:0.8rem;
+    --card-space: 2px;
+    --center: 1400px;
+    --gap-card: 10px;
+    --color-card: #ec407a;
     --grey-0: #1a1a1a;
     --grey-1: #272728;
-    --grey-2:  #222222
+    --grey-2:  #222222;
+    --grey-3: #7d7d7dc2;
 }
 
 .flex{
@@ -25,6 +30,10 @@ a{
     color: white;
 }
 
+.center{
+    max-width: var(--center);
+    margin: 0 auto;
+}
 
 /* HEADER */
 header{
@@ -52,10 +61,36 @@ header a{
 /* MAIN */
 main{
     height: calc(100vh - 130px);
-    overflow-y: scroll;
+    overflow-y: auto;
     color: white;
     background-color: var(--grey-2);
 }
+
+.row{
+    flex-wrap: wrap;
+    gap: var(--gap-card);
+}
+
+.card{
+    background-color: var(--color-card);
+    flex: 0 0 calc(var(--center) / 7 - var(--gap-card));
+    position: relative;
+    text-align: center;
+}
+
+.immage-profile{
+    font-size: 100px;
+}
+
+
+.name{
+    background-color: var(--grey-3);
+    padding: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
 /* FOOTER */
 footer{
     height: 80px;
